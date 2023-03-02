@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <script src="./app.js"></script>
+    <div id="header">
+        <h1>ROCK PAPER SCISSORS</h1>
+    </div>
+    <div id="main">
+        <div id="scoreboard-header">
+            <h2>Score</h2>
+        </div>
+        <div id="scoreboard">
+            <div class="score" id="your-score">
+                <p>You: 2</p>           
+            </div>
+            <div class="score" id="computer-score">
+                <p>Computer: 4</p>
+            </div>
+        </div>
+        <div id="computer-selected">
+            <div id="computer-selected-header">
+                <p>The computer chose:</p>    
+            </div>
+            <div id="computer-pick-images">
+                <img src="./images/rock.png" class="computer-pick">
+                <img src="./images/paper.png" class="computer-pick">
+                <img src="./images/scissors.png" class="computer-pick">
+            </div>
+        </div>
+        <div id="game-wrapper">
+            <div class="button-wrapper" id="rock">
+               <input type="image" src="./images/rock.png" class="game-buttons" id="btn-rock">
+                <p>ROCK</p>
+            </div>
+            <div class="button-wrapper" id="paper">
+                <input type="image" src="./images/paper.png" class="game-buttons" id="btn-paper">
+                <p>PAPER</p>
+            </div>
+            <div class="button-wrapper" id="scissors">
+                <input type="image" src="./images/scissors.png" class="game-buttons" id="btn-scissors">
+                <p>SCISSORS</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
