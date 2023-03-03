@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="./styles.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');</style>
 </head>
 <body>
     <script src="./app.js"></script>
@@ -13,7 +14,7 @@
         <h1>ROCK PAPER SCISSORS</h1>
     </div>
     <div id="main">
-        <div id="scoreboard-header">
+        <!-- <div id="scoreboard-header">
             <h2>Score</h2>
         </div>
         <div id="scoreboard">
@@ -24,30 +25,31 @@
                 <p>Computer: 4</p>
             </div>
         </div>
-        <div id="computer-selected">
-            <div id="computer-selected-header">
-                <p>The computer chose:</p>    
-            </div>
-            <div id="computer-pick-images">
-                <img src="./images/rock.png" class="computer-pick">
-                <img src="./images/paper.png" class="computer-pick">
-                <img src="./images/scissors.png" class="computer-pick">
-            </div>
+        <div id="win-or-lose">
+            <p>You won!</p>
         </div>
         <div id="game-wrapper">
             <div class="button-wrapper" id="rock">
                <input type="image" src="./images/rock.png" class="game-buttons" id="btn-rock">
                 <p>ROCK</p>
+                <p id="pick-you-rock" class="pick-you">YOU</p>
+                <p id="pick-com-rock" class="pick-com">COM</p>
             </div>
             <div class="button-wrapper" id="paper">
                 <input type="image" src="./images/paper.png" class="game-buttons" id="btn-paper">
                 <p>PAPER</p>
+                <p id="pick-you-paper" class="pick-you">YOU</p>
+                <p id="pick-com-paper" class="pick-com">COM</p>
             </div>
             <div class="button-wrapper" id="scissors">
                 <input type="image" src="./images/scissors.png" class="game-buttons" id="btn-scissors">
                 <p>SCISSORS</p>
+                <p id="pick-you-scissors" class="pick-you">YOU</p>
+                <p id="pick-com-scissors" class="pick-com">COM</p>
             </div>
-        </div>
+        </div> -->
+        <p>(open the console before you start)</p>
+        <button id="start-button" onclick="start()">START</button>
     </div>
 </body>
 </html>
