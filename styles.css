@@ -27,13 +27,16 @@ html {
     background-color: #151D2C;
     color: white;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
 /* Scoreboard */
 
-#scoreboard-header {
+#declare-winner {
+    visibility: hidden;
+    top: 0;
     padding: 40px 0;
 }
 
@@ -49,12 +52,9 @@ html {
 
 /* Game Start */
 
-p {
-    margin-top: 50px;
-}
 
 #start-button {
-    margin: 50px;
+    margin-top: 50px;
     padding: 10px 30px;
     font-size: 16px;
     font-family: Roboto;
@@ -86,6 +86,10 @@ p {
 
 .game-buttons:active {
     background-color: #37445A;
+}
+
+.pick {
+    visibility: hidden;
 }
 
 .pick-you {
