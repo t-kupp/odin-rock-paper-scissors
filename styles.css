@@ -1,113 +1,136 @@
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-family: Poppins, sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
 /* Header Start */
 
 #header {
-    min-height: 20vh;
-    width: 100%;
-    color: orange;
-    padding: 40px 0px;
-    text-align: center;
-    background-color: #111827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  width: 100%;
+  background-color: #111827;
+}
+
+#headline {
+  padding: 0 20px;
+  color: orange;
+  border-bottom: 3px solid orange;
 }
 
 /* Main Start */
 
 #main {
-    min-height: 80vh;
-    background-color: #151D2C;
-    color: white;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  min-height: 80vh;
+  background-color: #151d2c;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Scoreboard */
 
 #declare-winner {
-    visibility: hidden;
-    top: 0;
-    padding: 40px 0;
+  visibility: hidden;
+  top: 0;
+  padding: 40px 0;
+  text-align: center;
 }
 
 #scoreboard {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
 }
 
 .score {
-    margin: 0 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0 40px;
+}
+
+#your-score {
+  padding: 7px 12px;
+  background-color: #243147;
+  border: 1px solid orange;
+  border-radius: 50px;
+}
+
+#computer-score {
+  padding: 7px 12px;
+  background-color: #243147;
+  border: 1px solid orange;
+  border-radius: 50px;
 }
 
 /* Game Start */
 
-
 #start-button {
-    margin-top: 50px;
-    padding: 10px 30px;
-    font-size: 16px;
-    font-family: Roboto;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
 }
 
 #game-wrapper {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+#result {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .button-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game-buttons {
-    margin: 20px;
+  margin: 20px;
+  border-radius: 5%;
 }
 
 .game-buttons:hover {
-    outline: solid 1px orange;
-    border-radius: 5%;
-    background-color: #212C3D;
+  outline: 1px solid orange;
+  border-radius: 5%;
+  background-color: #212c3d;
 }
 
 .game-buttons:active {
-    background-color: #37445A;
+  background-color: #37445a;
 }
 
-.pick {
-    visibility: hidden;
-}
-
-.pick-you {
-    margin-top: 7px;
-    font-weight: 700;
+@media only screen and (max-width: 600px) {
+  #headline {
+    font-size: 24px;
+  }
+  #result {
+    font-size: 14px;
+  }
+  #declare-winner {
+    font-size: 20px;
+  }
+  .score {
     font-size: 12px;
-    letter-spacing: 2px;
-    color: greenyellow;
-    border: 2px solid greenyellow;
-    padding: 1px 5px;
-}
-
-.pick-com {
-    margin-top: 7px;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: red;
-    border: 2px solid red;
-    padding: 1px 3px;
+    margin: 0 20px;
+  }
+  .game-buttons {
+    height: 64px;
+    width: 64px;
+  }
 }

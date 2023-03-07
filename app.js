@@ -1,82 +1,13 @@
-
 const resultText = document.querySelector("#result");
 const playerText = document.querySelector("#your-score");
 const computerText = document.querySelector("#computer-score");
 const declareWinner = document.querySelector("#declare-winner");
 const buttons = document.querySelectorAll(".game-buttons");
-const pickClass = document.querySelectorAll(".pick")
 let playerScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-<<<<<<< Updated upstream
-    choice = Math.floor(Math.random() * 100);
-    if (choice < 33) {
-        return "rock"
-    } else if (choice > 66) {
-        return "paper"
-    } else {
-        return "scissors"
-    }
-}
-
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection.toLowerCase() === "rock") {
-        if (computerSelection === "rock") {
-            return tie;
-        } else if (computerSelection === "paper") {
-            computerScore ++;
-            return loss;
-        } else {
-            playerScore ++;
-            return win;
-        }
-    } if (playerSelection.toLowerCase() === "paper") {
-        if (computerSelection === "rock") {
-            playerScore ++;
-            return win;
-        } else if (computerSelection === "paper") {
-            return tie;
-        } else {
-            computerScore ++;
-            return loss;
-        }
-    } if (playerSelection.toLowerCase() === "scissors") {
-        if (computerSelection === "rock") {
-            computerScore ++;
-            return loss;
-        } else if (computerSelection === "paper") {
-            playerScore ++;
-            return win;
-        } else {
-            return tie;
-        }
-    }
-}
-
-let playerScore = parseInt(0)
-let computerScore = parseInt(0)
-let win = "You won!"
-let tie = "It's a tie."
-let loss = "You lost!"
-
-function start() {
-    for (let i = 0; i < 999 && playerScore < 5 && computerScore < 5; i++) {    
-    let playerSelection = prompt("Choose your weapon...\n(Rock, paper, scissors");
-    let computerSelection = getComputerChoice();
-    console.log(currentRound = playRound(playerSelection, computerSelection));
-    console.log("Your score: " + playerScore)
-    console.log("Computer score: " + computerScore)
-    if (playerScore == 5) {
-        console.log("Congratulations! You beat the computer.");
-        reset()
-        break
-    }else if (computerScore == 5) {
-        console.log("Oh no! You got beaten by a machine...");
-        reset()
-        break
-=======
-  choice = Math.floor((Math.random() * 3) + 1);
+  choice = Math.floor(Math.random() * 3 + 1);
   console.log(choice);
   if (choice == 1) {
     return "rock";
@@ -131,50 +62,50 @@ buttons.forEach((button) =>
     resultText.textContent = checkWinner(playerSelection, computerSelection);
     playerText.textContent = `You: ${playerScore}`;
     computerText.textContent = `Computer: ${computerScore}`;
-    showPick(playerSelection, computerSelection)
+    showPick(playerSelection, computerSelection);
     if (playerScore == 5) {
       declareWinner.style.visibility = "visible";
-      declareWinner.textContent = "You won!";
+      declareWinner.textContent = "Congratulations! You beat the machine!";
       resetGame();
     } else if (computerScore == 5) {
       declareWinner.style.visibility = "visible";
-      declareWinner.textContent = "You lost!";
+      declareWinner.textContent =
+        "Oh no, the machine won. Better luck next time ...";
       resetGame();
->>>>>>> Stashed changes
     }
   })
 );
 
-<<<<<<< Updated upstream
-function reset() {
-    playerScore = 0
-    computerScore = 0
-    i = 0
-=======
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
-  pickClass.forEach( e => e.style.visibility = "hidden")
-  resultText.textContent = "Choose a weapon...";
+  pickClass.forEach((e) => (e.style.outline = "1px solid transparent"));
+  resultText.textContent = "First to get a score of 5 wins.";
   playerText.textContent = `You: ${playerScore}`;
   computerText.textContent = `Computer: ${computerScore}`;
->>>>>>> Stashed changes
 }
 
+const pickClass = document.querySelectorAll(".game-buttons");
+const pickRock = document.getElementById("rock");
+const pickPaper = document.getElementById("paper");
+const pickScissors = document.getElementById("scissors");
 
-const comRock = document.querySelector("#pick-com-rock");
-const comPaper = document.querySelector("#pick-com-paper");
-const comScissors = document.querySelector("#pick-com-scissors");
-const youRock = document.querySelector("#pick-you-rock");
-const youPaper = document.querySelector("#pick-you-paper");
-const youScissors = document.querySelector("#pick-you-scissors");
-
-function showPick (playerSelection, computerSelection) {
-  pickClass.forEach( e => e.style.visibility = "hidden")
-  if (computerSelection == "rock") comRock.style.visibility = "visible";
-  if (computerSelection == "paper") comPaper.style.visibility = "visible";
-  if (computerSelection == "scissors") comScissors.style.visibility = "visible";
-  if (playerSelection == "rock") youRock.style.visibility = "visible";
-  if (playerSelection == "paper") youPaper.style.visibility = "visible";
-  if (playerSelection == "scissors") youScissors.style.visibility = "visible";
+function showPick(playerSelection, computerSelection) {
+  pickClass.forEach((e) => (e.style.outline = "1px solid transparent"));
+  if (playerSelection == "rock")
+    pickRock.style.outline = "solid 1px lightgreen";
+  if (playerSelection == "paper")
+    pickPaper.style.outline = "solid 1px lightgreen";
+  if (playerSelection == "scissors")
+    pickScissors.style.outline = "solid 1px lightgreen";
+  if (computerSelection == "rock") pickRock.style.outline = "solid 1px red";
+  if (computerSelection == "paper") pickPaper.style.outline = "solid 1px red";
+  if (computerSelection == "scissors")
+    pickScissors.style.outline = "solid 1px red";
+  if (playerSelection == "rock" && computerSelection == "rock")
+    pickRock.style.outline = "solid 1px orange";
+  if (playerSelection == "paper" && computerSelection == "paper")
+    pickPaper.style.outline = "solid 1px orange";
+  if (playerSelection == "scissors" && computerSelection == "scissors")
+    pickScissors.style.outline = "solid 1px orange";
 }
