@@ -8,7 +8,6 @@ let computerScore = 0;
 
 function getComputerChoice() {
   choice = Math.floor(Math.random() * 3 + 1);
-  console.log(choice);
   if (choice == 1) {
     return "rock";
   } else if (choice == 2) {
@@ -79,33 +78,25 @@ buttons.forEach((button) =>
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
-  pickClass.forEach((e) => (e.style.outline = "1px solid transparent"));
-  resultText.textContent = "First to get a score of 5 wins.";
+  playerDisplay.style.visibility = "hidden";
+  computerDisplay.style.visibility = "hidden";
+  resultText.textContent = "";
   playerText.textContent = `You: ${playerScore}`;
   computerText.textContent = `Computer: ${computerScore}`;
 }
 
-const pickClass = document.querySelectorAll(".game-buttons");
-const pickRock = document.getElementById("rock");
-const pickPaper = document.getElementById("paper");
-const pickScissors = document.getElementById("scissors");
+const playerDisplay = document.querySelector("#player-display");
+const computerDisplay = document.querySelector("#computer-display");
 
 function showPick(playerSelection, computerSelection) {
-  pickClass.forEach((e) => (e.style.outline = "1px solid transparent"));
-  if (playerSelection == "rock")
-    pickRock.style.outline = "solid 1px lightgreen";
-  if (playerSelection == "paper")
-    pickPaper.style.outline = "solid 1px lightgreen";
+  playerDisplay.style.visibility = "visible";
+  computerDisplay.style.visibility = "visible";
+  if (playerSelection == "rock") playerDisplay.src = "./images/rock.png";
+  if (playerSelection == "paper") playerDisplay.src = "./images/paper.png";
   if (playerSelection == "scissors")
-    pickScissors.style.outline = "solid 1px lightgreen";
-  if (computerSelection == "rock") pickRock.style.outline = "solid 1px red";
-  if (computerSelection == "paper") pickPaper.style.outline = "solid 1px red";
+    playerDisplay.src = "./images/scissors.png";
+  if (computerSelection == "rock") computerDisplay.src = "./images/rock.png";
+  if (computerSelection == "paper") computerDisplay.src = "./images/paper.png";
   if (computerSelection == "scissors")
-    pickScissors.style.outline = "solid 1px red";
-  if (playerSelection == "rock" && computerSelection == "rock")
-    pickRock.style.outline = "solid 1px orange";
-  if (playerSelection == "paper" && computerSelection == "paper")
-    pickPaper.style.outline = "solid 1px orange";
-  if (playerSelection == "scissors" && computerSelection == "scissors")
-    pickScissors.style.outline = "solid 1px orange";
+    computerDisplay.src = "./images/scissors.png";
 }
